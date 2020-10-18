@@ -1,0 +1,56 @@
+\documentclass[a4paper,landscape]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[noheadfoot, margin=0.4in]{geometry}
+\usepackage{multicol}
+\usepackage{graphicx}
+\usepackage{tabu}
+\usepackage{lmodern}
+\usepackage{rotating}
+\pagestyle{empty}
+
+\begin{document}
+\fontfamily{phv}\selectfont
+
+
+\begin{minipage}[t]{0.45\linewidth}
+    \begin{center}
+        (( BACK COVER ))\\
+        (( DO NOT REMOVE ))
+    \end{center}
+\end{minipage}
+\hspace{0.65in}%
+\begin{minipage}[t]{0.467\linewidth}
+\vspace*{0.2\textheight}
+    \begin{center}
+        \huge THIS IS THE TITLE PAGE \\ \\
+        \vspace*{0.05\textheight}
+        IT SHOULD FILL AS MUCH OF THE MINIPAGE AS POSSIBLE\\ \\
+        \vspace*{0.05\textheight}
+        ((DO NOT REMOVE))
+    \end{center}
+\end{minipage}
+\newpage
+
+\begin{minipage}[t]{0.45\linewidth}
+\vspace*{0.3\textheight}
+    \begin{center}
+        ((dedication page, if you want one))\\
+        ((this is one of the inner covers of the zine))\\
+    \end{center}
+\end{minipage}%
+\hspace{0.75in}%
+\begin{minipage}[t]{0.4\linewidth}
+\vspace*{0.2\textheight}
+    \begin{center}
+        \includegraphics[width=0.4\linewidth]{path_to_author_pic.png}
+    \end{center}
+    \begin{center}
+        ((author bio))\\
+        ((this should be one of the inner covers)) \\
+    \end{center}%}
+\end{minipage}%
+\newpage
+
+\VAR{content_pages}
+
+\end{document}
