@@ -46,10 +46,11 @@ def generate_pages(page_pairs, latex_jinja_env):
                                          rightnum=page[1])
     return content_pages
 
-def write_latex(zine_template, project):
+def write_latex(zine_template, content_pages, project):
     # TODO: set standard path for this at some point
     project_file = './%s.tex' % project 
-    zine_template.stream().dump(project_file)
+    with open(project_file, 'w+') as outfile:
+        outfile.write(zine_template.render(content_pages=content_pages))
 
 
 def main():
@@ -70,7 +71,6 @@ def main():
     args = parser.parse_args() 
     content_page_ct = round_pages(args.pages)
     page_pairs = get_page_pairs(content_page_ct)
-    # pprint(page_pairs)
     # NOTE: We need to customize the way we work with jinja here, since LaTex
     #       and jinja overload certain symbols
     latex_jinja_env = jinja2.Environment(
@@ -91,6 +91,6 @@ def main():
     if args.to_screen:
         print(zine_template.render(content_pages=content_pages))
     else:
-        write_latex(zine_template, args.project)
+        write_latex(zine_template, content_pages, args.project)
 
 main()
